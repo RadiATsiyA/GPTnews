@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header_container {
+    max-width: 1440px;
+    margin: 0 auto;
+
+}
+
+header {
+    padding-top: 35px;
+}
+
+.header_wrapper {
+    display: flex;
+    margin-bottom: 35px;
+}
+
+.header_title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 50px;
+    margin-left: 63px;
+    margin-right: 570px;
+}
+
+.header_title_link {
+    text-decoration: none;
+    color: black;
+}
+
+.header_links {
+    display: flex;
+    margin-top: 25px;
+}
+
+.header_link {
+    text-decoration: none;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+    margin-left: 35px;
+    padding-top: 15px;
+}
+
+.header_hr {
+    color: gainsboro;
+    margin-bottom: 53px;
+}
+
+/**************************MAIN BEGIN***************************/
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.main_title {
+    max-width: 858px;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 100%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 32px;
+}
+
+.main_subtitle {
+    max-width: 592px;
+    font-family: 'SF Mono';
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 170%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 34px;
+}
+
+.main_img {
+    width: 1440px;
+    height: 900px;
+    margin: 0 auto;
+    margin-bottom: 32px;
+}
+
+.main_hr {
+    max-width: 640px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.box_for_article {
+    display: flex;
+    max-width: 640px;
+    margin: 0 auto;
+    margin-bottom: 52px;
+}
+
+.avatar {
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.gpt_name {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.date {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.container_small {
+    max-width: 854px;
+    margin: 0 auto;
+}
+
+.title_of_article {
+    max-width: 640px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 160%;
+    margin: 0 auto;
+    margin-bottom: 24px;
+}
+
+.img_of_title {
+    width: 854px;
+    max-height: 570px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+}
+
+.img_descr {
+    max-width: 421px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 52px;
+}
+
+.article_text {
+    max-width: 640px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 170%;
+    margin: 0 auto;
+    margin-bottom: 90px;
+}
+
+.copy_link {
+    display: block;
+    max-width: 250px;
+    margin: 0 auto;
+    margin-bottom: 90px;
+}
+
+
+/*******************************WHAT TO READ NEXT*******************************/
+
+.container_medium {
+    max-width: 998px;
+    margin: 0 auto;
+    padding-bottom: 120px;
+}
+
+.img_separate {
+    max-width: 82px;
+    margin: 0 46%;
+    margin-top: -33px;
+    margin-bottom: 42px;
+}
+
+.what_read_title {
+    max-width: 376px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 53px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 27px;
+}
+
+.next_articles {
+    display: grid;
+    grid-template-columns: 305px 305px 305px;
+    row-gap: 34px;
+    column-gap: 28px;
+}
+
+.article_descr {
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 120%;
+    text-align: center;
+}
+
+.box_of_article:last-child {
+    margin-bottom: 114px;
+}
+
+.bold_hr {
+    width: 640px;
+    height: 10px;
+    background-color: black;
+    margin: 0 auto;
+}
+
+.box_signup_for_new {
+    width: 640px;
+    height: 313px;
+    margin: 0 auto;
+    border:1px solid black;
+    margin-top: -1px;
+}
+
+.signup {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 28px;
+    margin-top: 62px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.signup_descr {
+    max-width: 538px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 36px;
+}
+
+.box_input_button {
+    display: flex;
+    max-width: 514px;
+    margin: 0 auto;
+}
+
+.input_area {
+    padding: 15px 190px 15px 16px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.button_signup {
+    max-width: 139px;
+    padding: 1px 24px;
+    background: #000000;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+}
+
+
+/***************************FOOOOTEEER************************/
+
+.footer {
+    background-color: #000;
+    padding-top: 150px;
+}
+
+.footer_container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-bottom: 32px;
+}
+
+.footer_title {
+    max-width: 240px;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 50px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.footer_description {
+    max-width: 488px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    color: #fff;
+    margin: 0 auto;
+    margin-bottom: 32px;
+}
+
+.social_box {
+    max-width: 180px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.footer_link {
+    margin-right: 15px;
+    color: #fff;
+    margin-bottom: 65px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 170%;
+    text-decoration-line: underline;
+}
+
+.footer_rights {
+    max-width: 160px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 140%;
+    text-align: center;
+    color: #fff;
+    margin: 0 auto;
+}
