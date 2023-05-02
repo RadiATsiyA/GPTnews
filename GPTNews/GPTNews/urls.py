@@ -17,6 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from general.views import IndexView, ArticleView, HelloView, LinksView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', IndexView.as_view(), name='index'),
+    path('article', ArticleView.as_view(), name='article'),
+    path('links', LinksView.as_view(), name='links'),
+    path('hell-o', HelloView.as_view(), name='hello'),
 ]
