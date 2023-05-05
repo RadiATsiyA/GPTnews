@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from general.views import IndexView, ArticleView, HelloView, LinksView
+from general.views import IndexView, ArticleView, HelloView, LinksView, CreateNews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +25,5 @@ urlpatterns = [
     path('article', ArticleView.as_view(), name='article'),
     path('links', LinksView.as_view(), name='links'),
     path('hell-o', HelloView.as_view(), name='hello'),
+    path('create', CreateNews.as_view(), name='create'),
 ]

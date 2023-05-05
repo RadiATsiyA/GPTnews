@@ -1,0 +1,20 @@
+{% extends 'general/base.html' %}
+{% load static %}
+
+{% block css %} <link rel="stylesheet" href="{% static 'css/createnews.css' %}"> {% endblock %}
+
+{% block content %}
+    <section class="main">
+        <div class="container">
+            <h1 class="main_title">Suggest on what topic to generate news</h1>
+            <h2 class="main_subtitle">And new news will appear in a couple of minutes!</h2>
+            <hr class="main_hr">
+
+            <form action="" method="POST">
+                <label class="theme_label" for="">Enter your topic for new news: </label>
+                <input class="theme_input" type="text" placeholder="A new life has been found on the moon" required="">
+                <button type="button" class="submit_btn">Submit</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}
