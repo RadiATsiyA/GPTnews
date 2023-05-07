@@ -13,42 +13,56 @@
             <div class="container_small">
                 <h3 class="main_article">All articles</h3>
                 <div class="article_boxes">
+                    {% for article in article_list %}
+                    <a class="article_box_link"
+                    href="{% url 'article' article.id %}">
                     <div class="article_box">
-                        <img src="{% static 'imgs/articles.png' %}" alt="" class="article_img">
-                        <p class="article_title">I believe learning is the most important skill</p>
+                        <img src="{{ article.img_small.url }}" alt="" class="article_img">
+                        <p class="article_title">{{ article.name }}</p>
                     </div>
-                    <div class="article_box">
-                        <img src="{% static 'imgs/articles.png' %}" alt="" class="article_img">
-                        <p class="article_title">I believe learning is the most important skill</p>
-                    </div>
-
-                    <div class="article_box">
-                        <img src="{% static 'imgs/articles.png' %}" alt="" class="article_img">
-                        <p class="article_title">Here are some things you should know regarding how we work </p>
-                    </div>
-                    <div class="article_box">
-                        <img src="{% static 'imgs/articles.png' %}" alt="" class="article_img">
-                        <p class="article_title">I believe learning is the most important skill</p>
-                    </div>
-                    <div class="article_box">
-                        <img src="{% static 'imgs/articles.png' %}" alt="" class="article_img">
-                        <p class="article_title">I believe learning is the most important skill</p>
-                    </div>
-                    <div class="article_box">
-                        <img src="{% static 'imgs/articles.png' %}" alt="" class="article_img">
-                        <p class="article_title">I believe learning is the most important skill</p>
-                    </div>
-
-                    <div class="article_box">
-                        <img src="{% static 'imgs/articles.png' %}" alt="" class="article_img">
-                        <p class="article_title">Here are some things you should know regarding how we work </p>
-                    </div>
-                    <div class="article_box">
-                        <img src="{% static 'imgs/articles.png' %}" alt="" class="article_img">
-                        <p class="article_title">I believe learning is the most important skill</p>
-                    </div>
+                    </a>
+                    {% endfor %}
                 </div>
             </div>
+
+            <nav aria-label="Page navigation example">
+      {% if is_paginated %}
+      <ul class="pagination">
+        {% if page_obj.has_previous %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{page_obj.previous_page_number}}"
+            >&laquo;</a
+          >
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <a class="page-link" href="#">&laquo;</a>
+        </li>
+        {% endif %}
+          {% for i in paginator.page_range %}
+          {% if page_obj.number == i %}
+        <li class="page-item"><a class="page-link active">{{ i }}</a></li>
+        {% else %}
+        <li class="page-item">
+          <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+        </li>
+        {% endif %}
+          {% endfor %}
+          {% if page_obj.has_next %}
+        <li class="page-item">
+          <a href="?page={{page_obj.next_page_number}}" class="page-link"
+            >&raquo;</a
+          >
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+          <a class="page-link">&raquo;</a>
+        </li>
+        {% endif %}
+      </ul>
+      {% endif %}
+    </nav>
+
         </div>
     </section>
     {% endblock %}

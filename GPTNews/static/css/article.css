@@ -133,7 +133,7 @@ header {
 
 .img_of_title {
     width: 854px;
-    max-height: 570px;
+    height: 570px;
     margin: 0 auto;
     margin-bottom: 12px;
 }
