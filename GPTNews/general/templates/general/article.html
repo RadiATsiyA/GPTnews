@@ -1,5 +1,5 @@
 {% extends 'general/base.html' %}
-{% load static %}
+{% load static cache %}
 
 
 {% block css %} <link rel="stylesheet" href="{% static 'css/article.css' %}"> {% endblock %}
@@ -22,7 +22,7 @@
 
             <div class="container_small">
                 <h2 class="title_of_article">{{ article.name }}</h2>
-                <img src="{{ article.img_big.url }}" alt="" class="img_of_title">
+                <img src="{{ article.image_url }}" alt="" class="img_of_title">
                 <p class="img_descr">Image caption centered this way and I'll make this a bit longer to indicate the amount of line-height. </p>
                 <p class="article_text">{{ article.text }}
                     <br><br>
@@ -41,41 +41,27 @@
             <img src="{% static 'imgs/eyes.png' %}" alt="" class="img_separate">
             <h2 class="what_read_title">What to read next</h2>
             <div class="next_articles">
+            {% cache 3600 next_articles %}
+                {% for next_article in next_articles %}
                 <div class="box_of_article">
-                    <img src="{% static 'imgs/articles.png' %}" alt="" class="next_article_img">
-                    <p class="article_descr">Hello world, or, in other words, why this blog exists</p>
+                    <img src="{{ next_article.image_url }}" alt="" class="next_article_img">
+                    <p class="article_descr">{{ next_article.name }}</p>
                 </div>
-                <div class="box_of_article">
-                    <img src="{% static 'imgs/articles.png' %}" alt="" class="next_article_img">
-                    <p class="article_descr">Hello world, or, in other words, why this blog exists</p>
-                </div>
-                <div class="box_of_article">
-                    <img src="{% static 'imgs/articles.png' %}" alt="" class="next_article_img">
-                    <p class="article_descr">Hello world, or, in other words, why this blog exists</p>
-                </div>
-                <div class="box_of_article">
-                    <img src="{% static 'imgs/articles.png' %}" alt="" class="next_article_img">
-                    <p class="article_descr">Hello world, or, in other words, why this blog exists</p>
-                </div>
-
-                <div class="box_of_article">
-                    <img src="{% static 'imgs/articles.png' %}" alt="" class="next_article_img">
-                    <p class="article_descr">Hello world, or, in other words, why this blog exists</p>
-                </div>
-                <div class="box_of_article">
-                    <img src="{% static 'imgs/articles.png' %}" alt="" class="next_article_img">
-                    <p class="article_descr">Hello world, or, in other words, why this blog exists</p>
-                </div>
+                {% endfor %}
+            {% endcache %}
             </div>
 
             <div class="box_signup_for_new">
                 <hr class="bold_hr">
                 <h3 class="signup">Sign up for the newsletter</h3>
                 <p class="signup_descr">If you want relevant updates occasionally, sign up for the private newsletter. Your email is never shared. </p>
-                <div class="box_input_button">
-                    <input type="text" class="input_area" placeholder="Enter your email...">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="box_input_button">
+                    {{ form.email }}
                     <button class="button_signup">sign up</button>
                 </div>
+                </form>
             </div>
         </div>
     </section>

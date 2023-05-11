@@ -1,5 +1,5 @@
 {% extends 'general/base.html' %}
-{% load static %}
+{% load static cache %}
 
 {% block css %} <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock %}
 
@@ -13,15 +13,18 @@
             <div class="container_small">
                 <h3 class="main_article">All articles</h3>
                 <div class="article_boxes">
+
+                {% cache 3600 article_list %}
                     {% for article in article_list %}
                     <a class="article_box_link"
                     href="{% url 'article' article.id %}">
                     <div class="article_box">
-                        <img src="{{ article.img_small.url }}" alt="" class="article_img">
+                        <img src="{{ article.image_url }}" alt="" class="article_img">
                         <p class="article_title">{{ article.name }}</p>
                     </div>
                     </a>
                     {% endfor %}
+                {% endcache %}
                 </div>
             </div>
 

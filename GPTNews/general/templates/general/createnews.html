@@ -11,9 +11,10 @@
             <hr class="main_hr">
 
             <form action="" method="POST">
-                <label class="theme_label" for="">Enter your topic for new news: </label>
-                <input class="theme_input" type="text" placeholder="A new life has been found on the moon" required="">
-                <button type="button" class="submit_btn">Submit</button>
+                {% csrf_token %}
+                <label class="theme_label" for="{{ form.theme.id_for_label }}">Enter your topic for new news: </label>
+                {{ form.theme }}
+                <button type="submit" class="submit_btn">Submit</button>
             </form>
         </div>
     </section>

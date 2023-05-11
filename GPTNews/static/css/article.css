@@ -200,6 +200,12 @@ header {
     column-gap: 28px;
 }
 
+.next_article_img {
+    width: 304px;
+    height: 176px;
+}
+
+
 .article_descr {
     margin-top: 20px;
     font-style: normal;
@@ -207,6 +213,11 @@ header {
     font-size: 22px;
     line-height: 120%;
     text-align: center;
+}
+
+.box_of_article:hover {
+    opacity: 0.7;
+    color: blueviolet;
 }
 
 .box_of_article:last-child {

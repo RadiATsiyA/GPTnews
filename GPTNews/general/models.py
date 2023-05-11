@@ -5,11 +5,10 @@ class Article(models.Model):
     name = models.CharField(max_length=300)
     text = models.TextField(max_length=3500)
     date = models.DateField(auto_now_add=True)
-    img_big = models.ImageField(upload_to='article_images_big')
-    img_small = models.ImageField(upload_to='article_images_small')
+    image_url = models.URLField(max_length=100, null=True)
 
     def __str__(self):
-        return f'{self.id}. {self.name}'
+        return f'{self.id} | {self.name}'
 
 
 class Emails(models.Model):
@@ -17,7 +16,7 @@ class Emails(models.Model):
     date = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.email
+        return f'{self.id} | {self.email} | {self.date}'
 
 
 class Suggestions(models.Model):
@@ -26,4 +25,4 @@ class Suggestions(models.Model):
     used = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.id} {self.theme}'
+        return f'{self.id} | {self.theme} | {self.date}'
