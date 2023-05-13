@@ -40,14 +40,14 @@
             <img src="{% static 'imgs/eyes.png' %}" alt="" class="img_separate">
             <h2 class="what_read_title">What to read next</h2>
             <div class="next_articles">
-            {% cache 3600 next_articles %}
                 {% for next_article in next_articles %}
+                <a class="next_article_box_link" href="/article/{{ next_article.id }}/">
                 <div class="box_of_article">
                     <img src="{{ next_article.image_url }}" alt="" class="next_article_img">
                     <p class="article_descr">{{ next_article.name }}</p>
                 </div>
+                </a>
                 {% endfor %}
-            {% endcache %}
             </div>
 
             <div class="box_signup_for_new">

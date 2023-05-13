@@ -215,6 +215,11 @@ header {
     text-align: center;
 }
 
+.next_article_box_link {
+    text-decoration: none;
+    color: black;
+}
+
 .box_of_article:hover {
     opacity: 0.7;
     color: blueviolet;

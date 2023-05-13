@@ -20,7 +20,6 @@ class IndexView(TitleMixin, ListView):
     model = Article
     template_name = 'general/index.html'
     title = 'Home'
-    paginate_by = 6
 
 
 class ArticleView(TitleMixin, DetailView):
