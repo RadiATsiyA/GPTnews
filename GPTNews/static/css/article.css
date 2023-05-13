@@ -133,7 +133,7 @@ header {
 
 .img_of_title {
     width: 854px;
-    max-height: 570px;
+    height: 570px;
     margin: 0 auto;
     margin-bottom: 12px;
 }
@@ -200,6 +200,12 @@ header {
     column-gap: 28px;
 }
 
+.next_article_img {
+    width: 304px;
+    height: 176px;
+}
+
+
 .article_descr {
     margin-top: 20px;
     font-style: normal;
@@ -207,6 +213,16 @@ header {
     font-size: 22px;
     line-height: 120%;
     text-align: center;
+}
+
+.next_article_box_link {
+    text-decoration: none;
+    color: black;
+}
+
+.box_of_article:hover {
+    opacity: 0.7;
+    color: blueviolet;
 }
 
 .box_of_article:last-child {

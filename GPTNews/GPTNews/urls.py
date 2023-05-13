@@ -16,13 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
-from general.views import IndexView, ArticleView, HelloView, LinksView
+from general.views import IndexView, ArticleView, HelloView, LinksView, CreateNews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', IndexView.as_view(), name='index'),
-    path('article', ArticleView.as_view(), name='article'),
+    path('article/<int:pk>/', ArticleView.as_view(), name='article'),
     path('links', LinksView.as_view(), name='links'),
     path('hell-o', HelloView.as_view(), name='hello'),
+    path('create', CreateNews.as_view(), name='create'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
